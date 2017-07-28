@@ -14,4 +14,11 @@ export class AppComponent {
     genre: 'Male'
   }
 
+  getName() {
+    return 'Ederson';
+  }
+
+  setAge(age: number) {
+    this.age = age;
+  }
 }

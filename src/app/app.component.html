@@ -4,4 +4,9 @@
 <p>{{age}}</p>
 <h3>{{ person.name }} </h3>
 <h5> {{ person.genre }} </h5>
+<input type="text" name="name" [value]="age">
+<button (click)="setAge(30)">Set Age!</button>
+<input type="text" [(ngModel)]="person.name">
+
+<hr>
 <app-users></app-users>
