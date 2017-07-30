@@ -13,6 +13,7 @@ export class AppComponent {
     age: 27,
     genre: 'Male'
   }
+  registeredUsers = ['Ederson', 'Juliana', 'Wagner'];
 
   getName() {
     return 'Ederson';
@@ -20,5 +21,9 @@ export class AppComponent {
 
   setAge(age: number) {
     this.age = age;
+  }
+
+  onChildAlert(message: string) {
+    alert(message);
   }
 }

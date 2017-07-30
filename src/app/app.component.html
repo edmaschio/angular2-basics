@@ -1,5 +1,5 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
 <p>{{age}}</p>
 <h3>{{ person.name }} </h3>
@@ -9,4 +9,4 @@
 <input type="text" [(ngModel)]="person.name">
 
 <hr>
-<app-users></app-users>
+<app-users [users]="registeredUsers" (alertThrown)="onChildAlert($event)"></app-users>
