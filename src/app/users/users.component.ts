@@ -1,4 +1,5 @@
 import { Component, Input, EventEmitter, Output } from "@angular/core";
+import { UsersService } from "../users.service";
 
 @Component({
     selector: 'app-users',
@@ -14,8 +15,14 @@ import { Component, Input, EventEmitter, Output } from "@angular/core";
 export class UsersComponent {
     extraInfo = false;
     color = 'green';
-    @Input() users: any;
+    //@Input() users: any;
+    users: any[];
     @Output() alertThrown = new EventEmitter<string>();
+    
+    constructor(private usersService: UsersService) { 
+        this.users = this.usersService.getUsers();
+    }
+
     
     onShowAlert() {
         this.alertThrown.emit('This is my message');

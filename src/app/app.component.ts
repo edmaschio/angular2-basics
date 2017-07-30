@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsersService } from "./users.service";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,12 @@ export class AppComponent {
     age: 27,
     genre: 'Male'
   }
-  registeredUsers = ['Ederson', 'Juliana', 'Wagner'];
+
+  registeredUsers: any[];
+
+  constructor(private usersService: UsersService) { 
+    this.registeredUsers = this.usersService.getUsers();
+  }
 
   getName() {
     return 'Ederson';
